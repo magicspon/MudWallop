@@ -1,10 +1,7 @@
 # MudWallop
 Fork of Wallop
 
-All credit to:
-
-@author Pedro Duarte
-@author http://pedroduarte.me/wallop
+All credit to: http://pedroduarte.me/wallop
 
 ### Changes.  
 
