@@ -36,7 +36,7 @@ export default class Slide extends Concert {
 		super()
 		this.$el = el
 		this.options = mergeOptions(this.defaults, options, el, 'slideOptions')
-		log(this.options)
+		
 
 		this.$buttonPrevious = this.$el.querySelector(
 			`.${this.options.buttonPreviousClass}`
