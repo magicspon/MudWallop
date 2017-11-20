@@ -23,6 +23,7 @@ export default class Slide extends Concert {
 		hidePreviousClass: 'Wallop-item--hidePrevious',
 		hideNextClass: 'Wallop-item--hideNext',
 		carousel: true,
+		pagerContainer: false,
 		pagerWrapper: '<ul class="c-slide__pager"></ul>',
 		pagerItem: '<li class="c-slide__pager-item"></li>',
 		pagerActiveClass: 'is-current',
@@ -36,7 +37,6 @@ export default class Slide extends Concert {
 		super()
 		this.$el = el
 		this.options = mergeOptions(this.defaults, options, el, 'slideOptions')
-		
 
 		this.$buttonPrevious = this.$el.querySelector(
 			`.${this.options.buttonPreviousClass}`
@@ -222,8 +222,14 @@ export default class Slide extends Concert {
 	 * @return Slide
 	 */
 	renderPager = () => {
-		const { pagerWrapper, pagerItem, pagerActiveClass } = this.options
-		this.$pagerWrapper = this.$el.appendChild(domify(pagerWrapper))
+		const {
+			pagerWrapper,
+			pagerItem,
+			pagerActiveClass,
+			pagerContainer
+		} = this.options
+		const $parent = pagerContainer ? pagerContainer : this.$el
+		this.$pagerWrapper = $parent.appendChild(domify(pagerWrapper))
 		this.$pagerWrapper.appendChild(
 			domify(this.$nodes.map(() => pagerItem).join(''))
 		)
@@ -298,7 +304,6 @@ export default class Slide extends Concert {
 	 */
 	loop = () => {
 		this.timeout = setTimeout(() => {
-			log(this.currentItemIndex)
 			this.handle = requestAnimationFrame(this.loop)
 			this.next()
 		}, this.options.delay)

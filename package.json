@@ -1,6 +1,6 @@
 {
 	"name": "mudwallop",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"main": "dist/index.min.js",
 	"dependencies": {
 		"concert": "^2.1.0",
@@ -23,9 +23,7 @@
 		"build": "rollup -c",
 		"dev": "NODE_ENV=development rollup -c -w"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"description": "Modified version of Wallop.js",
 	"repository": {
 		"type": "git",
