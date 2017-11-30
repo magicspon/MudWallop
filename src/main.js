@@ -67,7 +67,7 @@ export default class Slide extends Concert {
 
 	bindEvents = () => {
 		if (this.$buttonPrevious) {
-			this.$buttonPrevious.addEventListener('click', this._onPrevNext)
+			this.$buttonPrevious.addEventListener('click', this._onClickPrev)
 		}
 
 		if (this.$buttonNext) {
@@ -75,9 +75,9 @@ export default class Slide extends Concert {
 		}
 	}
 
-	_onPrevNext = e => {
+	_onClickPrev = e => {
 		e.preventDefault()
-		this.next()
+		this.previous()
 	}
 
 	_onClickNext = e => {
