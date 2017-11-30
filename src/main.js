@@ -129,7 +129,12 @@ export default class Slide extends Concert {
 			this.loop()
 		}
 
-		this.trigger('change', { index, $node: this.$nodes[index] })
+		this.trigger('change', {
+			index,
+			$node: this.$nodes[index],
+			isForwards,
+			prev: this.lastItemIndex
+		})
 	}
 
 	previous = () => this.goTo(this.currentItemIndex - 1)

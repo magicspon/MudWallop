@@ -1,6 +1,6 @@
 {
 	"name": "mudwallop",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"main": "dist/index.min.js",
 	"dependencies": {
 		"concert": "^2.1.0",
