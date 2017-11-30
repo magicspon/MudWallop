@@ -90,6 +90,8 @@ export default class Slide extends Concert {
 			return
 		}
 
+		const prev = this.currentItemIndex
+
 		// Fix the index if it's out of bounds and carousel is enabled
 		index = index === -1 && this.options.carousel ? this.lastItemIndex : index
 		index =
@@ -131,9 +133,9 @@ export default class Slide extends Concert {
 
 		this.trigger('change', {
 			index,
-			$node: this.$nodes[index],
 			isForwards,
-			prev: this.lastItemIndex
+			prev,
+			$node: this.$nodes[index]
 		})
 	}
 
