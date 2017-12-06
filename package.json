@@ -2,6 +2,7 @@
 	"name": "mudwallop",
 	"version": "0.0.7",
 	"main": "dist/index.min.js",
+	"private": false,
 	"dependencies": {
 		"concert": "^2.1.0",
 		"domify": "^1.4.0",
