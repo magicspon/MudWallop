@@ -78,11 +78,13 @@ export default class Slide extends Concert {
 	_onClickPrev = e => {
 		e.preventDefault()
 		this.previous()
+		this.trigger('previous')
 	}
 
 	_onClickNext = e => {
 		e.preventDefault()
 		this.next()
+		this.trigger('next')
 	}
 
 	goTo = index => {
